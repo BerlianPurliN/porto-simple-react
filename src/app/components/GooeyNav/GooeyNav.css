@@ -1,10 +1,35 @@
 :root {
-  --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
+  --linear-ease: linear(
+    0,
+    0.068,
+    0.19 2.7%,
+    0.804 8.1%,
+    1.037,
+    1.199 13.2%,
+    1.245,
+    1.27 15.8%,
+    1.274,
+    1.272 17.4%,
+    1.249 19.1%,
+    0.996 28%,
+    0.949,
+    0.928 33.3%,
+    0.926,
+    0.933 36.8%,
+    1.001 45.6%,
+    1.013,
+    1.019 50.8%,
+    1.018 54.4%,
+    1 63.1%,
+    0.995 68%,
+    1.001 85%,
+    1
+  );
 }
 
 .gooey-nav-container {
   position: relative;
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 
 .gooey-nav-container nav {
@@ -26,13 +51,20 @@
 }
 
 .gooey-nav-container nav ul li {
-  padding: 0.6em 1em;
   border-radius: 100vw;
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0.5px 1.5px transparent;
   color: white;
+}
+.gooey-nav-container nav ul li a {
+  display: block; 
+  padding: 10px 20px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
@@ -144,24 +176,28 @@
 
 @keyframes particle {
   0% {
-    transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
+    transform: rotate(0deg)
+      translate(calc(var(--start-x)), calc(var(--start-y)));
     opacity: 1;
     animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
   }
 
   70% {
-    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    transform: rotate(calc(var(--rotate) * 0.5))
+      translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
     opacity: 1;
     animation-timing-function: ease;
   }
 
   85% {
-    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x)), calc(var(--end-y)));
+    transform: rotate(calc(var(--rotate) * 0.66))
+      translate(calc(var(--end-x)), calc(var(--end-y)));
     opacity: 1;
   }
 
   100% {
-    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    transform: rotate(calc(var(--rotate) * 1.2))
+      translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
     opacity: 1;
   }
 }
