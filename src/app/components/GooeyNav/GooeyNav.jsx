@@ -24,10 +24,11 @@ const GooeyNav = ({
   useEffect(() => {
     if (externalActiveIndex !== null && externalActiveIndex !== activeIndex) {
       setActiveIndex(externalActiveIndex);
-      
+
       // Trigger efek visual untuk perubahan dari external
       if (navRef.current) {
-        const activeLi = navRef.current.querySelectorAll("li")[externalActiveIndex];
+        const activeLi =
+          navRef.current.querySelectorAll("li")[externalActiveIndex];
         if (activeLi) {
           // Simulate click untuk trigger animasi
           const fakeEvent = { currentTarget: activeLi };
@@ -159,7 +160,7 @@ const GooeyNav = ({
     if (item.onClick) {
       item.onClick(e);
     }
-    
+
     // Jika event tidak di-preventDefault, lakukan default behavior
     if (!e.defaultPrevented) {
       // Default smooth scroll behavior
@@ -167,8 +168,8 @@ const GooeyNav = ({
       const targetSection = document.querySelector(item.href);
       if (targetSection) {
         targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
@@ -183,7 +184,8 @@ const GooeyNav = ({
     }
 
     const resizeObserver = new ResizeObserver(() => {
-      const currentActiveLi = navRef.current?.querySelectorAll("li")[activeIndex];
+      const currentActiveLi =
+        navRef.current?.querySelectorAll("li")[activeIndex];
       if (currentActiveLi) {
         updateEffectPosition(currentActiveLi);
       }
@@ -203,8 +205,8 @@ const GooeyNav = ({
               className={activeIndex === index ? "active" : ""}
               onClick={(e) => handleClick(e, index)}
             >
-              <a 
-                href={item.href} 
+              <a
+                href={item.href}
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 onClick={(e) => handleAnchorClick(e, item, index)}
               >
@@ -214,8 +216,6 @@ const GooeyNav = ({
           ))}
         </ul>
       </nav>
-      <span className="effect filter" ref={filterRef} />
-      <span className="effect text" ref={textRef} />
     </div>
   );
 };
