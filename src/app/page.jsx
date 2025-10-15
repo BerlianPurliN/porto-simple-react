@@ -80,7 +80,7 @@ export default function Home() {
                   ]}
                   animationSpeed={3}
                   showBorder={false}
-                  className="text-4xl font-extrabold md:text-5xl lg:text-6xl"
+                  className="text-sm md:text-xl font-extrabold lg:text-6xl"
                 >
                   Website Developer
                 </GradientText>
